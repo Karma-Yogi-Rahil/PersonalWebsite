@@ -34,6 +34,7 @@ jobs:
         source: ./publish/                   # Directory containing the built files
         target: /home/rahil/pi/publish/      # Directory on the Raspberry Pi to upload files
 
+
     # Step 5: Restart the service on the Raspberry Pi
     - name: Restart the web service
       uses: appleboy/ssh-action@v0.1.4
