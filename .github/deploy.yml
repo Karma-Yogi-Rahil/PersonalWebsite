@@ -1,0 +1,44 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up .NET environment
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'  # Specify the .NET version you are using
+
+    # Step 3: Build the project
+    - name: Build the project
+      run: dotnet publish -c Release -o ./publish
+
+    # Step 4: Transfer files to Raspberry Pi
+    - name: Copy files to Raspberry Pi
+      uses: appleboy/scp-action@v0.2.1
+      with:
+        host: 10.0.0.64                      # Replace with your Raspberry Pi's IP address
+        username: rahil                      # Your Raspberry Pi username
+        key: ${{ secrets.SSH_PRIVATE_KEY }}  # The private key stored in GitHub secrets
+        source: ./publish/                   # Directory containing the built files
+        target: /home/rahil/pi/publish/      # Directory on the Raspberry Pi to upload files
+
+    # Step 5: Restart the service on the Raspberry Pi
+    - name: Restart the web service
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+        host: 10.0.0.64                      # Replace with your Raspberry Pi's IP address
+        username: rahil                      # Your Raspberry Pi username
+        key: ${{ secrets.SSH_PRIVATE_KEY }}  # The private key stored in GitHub secrets
+        script: sudo systemctl restart portfolio.service
