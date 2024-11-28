@@ -1,0 +1,12 @@
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/PortfolioWebsite
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/publish/web.config
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/appsettings.Development.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/appsettings.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/publish/appsettings.Development.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/publish/appsettings.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/publish/PortfolioWebsite.deps.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/publish/PortfolioWebsite.runtimeconfig.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/PortfolioWebsite.dll
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/PortfolioWebsite.deps.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/PortfolioWebsite.runtimeconfig.json
+/Users/rahil/Documents/GitHub/PortfolioWebsite/publish/PortfolioWebsite.pdb
